@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: ms-customer
+          uri: http://ms-customer:8080
+          predicates:
+            - Path=/api/v1/customers/**
+        - id: ms-transaction
+          uri: http://ms-transaction:8080
+          predicates:
+            - Path=/api/v1/transactions/**
